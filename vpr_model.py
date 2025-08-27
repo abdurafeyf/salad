@@ -193,6 +193,10 @@ class VPRModel(pl.LightningModule):
     # this is the way Pytorch Lghtning is made. All about modularity, folks.
     def validation_step(self, batch, batch_idx, dataloader_idx=None):
         places, _ = batch
+        if len(places.shape) == 5:
+            BS, N, ch, h, w = places.shape
+            places = places.view(BS*N, ch, h, w)
+        
         descriptors = self(places)
         self.val_outputs[dataloader_idx].append(descriptors.detach().cpu())
         return descriptors.detach().cpu()
