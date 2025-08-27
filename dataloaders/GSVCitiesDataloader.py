@@ -3,8 +3,8 @@ from torch.utils.data.dataloader import DataLoader
 from torchvision import transforms as T
 
 from dataloaders.GSVCitiesDataset import GSVCitiesDataset
-from . import PittsburgDataset
-from . import MapillaryDataset
+# from . import PittsburgDataset
+# from . import MapillaryDataset
 
 from prettytable import PrettyTable
 
