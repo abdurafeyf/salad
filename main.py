@@ -12,8 +12,7 @@ if __name__ == '__main__':
         random_sample_from_each_place=True,
         image_size=(224, 224),
         num_workers=10,
-        show_data_stats=True,
-        val_set_names=['pitts30k_val', 'pitts30k_test', 'msls_val'], # pitts30k_val, pitts30k_test, msls_val
+        show_data_stats=True
     )
     
     model = VPRModel(
